@@ -2,14 +2,14 @@ CREATE SCHEMA cidest;
 
 CREATE TABLE estado(
     id INT AUTO_INCREMENT,
-    nome varchar(45),
+    est_nome varchar(45),
     sigla varchar(2),
     PRIMARY KEY (id));
 
 CREATE TABLE cidade(
     id INT AUTO_INCREMENT,
     id_estado INT,
-    nome varchar(45),
+    cid_nome varchar(45),
     PRIMARY KEY (id),
     FOREIGN KEY (id_estado) references estado (id));
 

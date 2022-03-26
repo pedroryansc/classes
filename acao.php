@@ -19,8 +19,7 @@
         }
         $pdo = Conexao::getInstance();
         $consulta = $pdo->query("SELECT cid_nome, est_nome
-                                FROM cidade, estado
-                                WHERE cidade.id_estado = estado.id");
+                                FROM cidade JOIN estado ON cidade.id_estado = estado.id");
         while ($linha = $consulta->fetch(PDO::FETCH_BOTH)) {
             echo "<br><br>
             Cidade: {$linha['cid_nome']} <br>
